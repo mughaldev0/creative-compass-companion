@@ -17,6 +17,8 @@ import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { AnnouncementBar } from "@/components/site/AnnouncementBar";
 import { ButtonLink, Button } from "@/components/site/Button";
+import { AuthProvider } from "@/context/AuthContext";
+import { DemoStoreProvider } from "@/context/DemoStore";
 
 function NotFoundComponent() {
   return (
@@ -98,6 +100,8 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
+       <AuthProvider>
+       <DemoStoreProvider>
         <MotionProvider>
           <a
             href="#main"
@@ -112,6 +116,8 @@ function RootComponent() {
           </main>
           <Footer />
         </MotionProvider>
+       </DemoStoreProvider>
+       </AuthProvider>
       </ThemeProvider>
     </QueryClientProvider>
   );
