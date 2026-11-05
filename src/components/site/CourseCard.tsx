@@ -12,7 +12,7 @@ export function CourseThumb({ course }: { course: Course }) {
       <svg aria-hidden viewBox="0 0 300 120" className="absolute -right-6 bottom-0 h-28 w-auto" fill="none">
         <path d="M10 110 C 80 120, 220 100, 290 10" stroke="var(--brand-blue)" strokeWidth="3" strokeLinecap="round" />
       </svg>
-      <span className="relative font-display text-2xl font-extrabold text-[#FEFEFE] sm:text-3xl">{course.title}</span>
+      <span className="relative font-display text-2xl font-extrabold text-paper sm:text-3xl">{course.title}</span>
     </div>
   );
 }

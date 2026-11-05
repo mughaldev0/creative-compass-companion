@@ -30,6 +30,7 @@
   --color-brand-blue: var(--brand-blue);
   --color-deep-blue: var(--deep-blue);
   --color-navy: var(--navy);
+  --color-paper: #fefefe;
   --color-amber: var(--accent);
   --color-on-accent: var(--on-accent);
   --color-control-line: var(--control-line);
