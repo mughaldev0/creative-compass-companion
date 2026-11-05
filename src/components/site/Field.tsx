@@ -20,7 +20,7 @@ function Wrap({ id, label, error, children }: { id: string; label: string; error
   );
 }
 
-type Common = { label: string; error?: string };
+type Common = { label: string; error?: string | undefined };
 
 export function Input({ label, error, className, ...p }: Common & InputHTMLAttributes<HTMLInputElement>) {
   const id = useId();

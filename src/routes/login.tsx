@@ -19,7 +19,7 @@ export const Route = createFileRoute("/login")({
 
 function LoginPage() {
   const [v, setV] = useState({ email: "", password: "" });
-  const [err, setErr] = useState<Record<string, string>>({});
+  const [err, setErr] = useState<Partial<Record<"name" | "email" | "phone" | "subject" | "message" | "password", string>>>({});
   const [tried, setTried] = useState(false);
 
   function onSubmit(e: FormEvent) {

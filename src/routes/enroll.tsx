@@ -25,7 +25,7 @@ function EnrollPage() {
   const search = Route.useSearch();
   const [course, setCourse] = useState<CourseSlug>(search.course ?? courses[0].slug);
   const [v, setV] = useState({ name: "", email: "", phone: "" });
-  const [err, setErr] = useState<Record<string, string>>({});
+  const [err, setErr] = useState<Partial<Record<"name" | "email" | "phone" | "subject" | "message" | "password", string>>>({});
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const c = getCourse(course)!;
 

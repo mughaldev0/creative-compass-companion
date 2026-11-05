@@ -24,7 +24,7 @@ const empty = { name: "", email: "", phone: "", subject: "", message: "", websit
 
 function ContactPage() {
   const [v, setV] = useState(empty);
-  const [err, setErr] = useState<Record<string, string>>({});
+  const [err, setErr] = useState<Partial<Record<"name" | "email" | "phone" | "subject" | "message" | "password", string>>>({});
   const [status, setStatus] = useState<Status>("idle");
   const wa = whatsappHref();
   const { email, phone, city } = site.contact;
@@ -33,7 +33,7 @@ function ContactPage() {
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
     if (v.website) return; // honeypot
-    const next: Record<string, string> = {
+    const next = {
       name: required(v.name, "Full name"),
       email: required(v.email, "Email") || (isEmail(v.email) ? "" : "Enter a valid email address."),
       subject: required(v.subject, "Subject"),
