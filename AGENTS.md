@@ -28,3 +28,10 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- All site content (courses, prices, contact, FAQs inputs) lives in `src/data/site.ts`; components read from it so facts change in one place.
+- Discount percentages come from `discountPercent()`; never hardcode a percentage.
+- Theme is a `data-theme` attribute on `<html>` set by an inline head script plus `ThemeContext`; tokens switch on `:root[data-theme="dark"]`.
+- Motion: GSAP + Lenis only, via `src/lib/motion.ts`, `MotionProvider` and `useReveal` (`data-reveal`); every animation has a reduced-motion branch.
+- Backend calls are stubs in `src/lib/submit*.ts` marked TODO(backend) until a backend is chosen.
