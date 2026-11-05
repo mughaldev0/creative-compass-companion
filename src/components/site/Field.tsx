@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 const base =
   "theme-t w-full rounded-control bg-surface text-ink clay-pressed control px-4 placeholder:text-muted-ink/80 focus-visible:outline-2 focus-visible:outline-blue-ink";
 
-function Wrap({ id, label, error, children }: { id: string; label: string; error?: string; children: ReactNode }) {
+function Wrap({ id, label, error, children }: { id: string; label: string; error?: string | undefined; children: ReactNode }) {
   return (
     <div className="flex flex-col gap-2">
       <label htmlFor={id} className="text-sm font-semibold text-ink">

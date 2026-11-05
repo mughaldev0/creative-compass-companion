@@ -9,7 +9,7 @@ import { Input, Select } from "@/components/site/Field";
 
 export const Route = createFileRoute("/enroll")({
   validateSearch: (s: Record<string, unknown>): { course?: CourseSlug } =>
-    typeof s.course === "string" && getCourse(s.course) ? { course: s.course as CourseSlug } : {},
+    typeof s["course"] === "string" && getCourse(s["course"]) ? { course: s["course"] as CourseSlug } : {},
   head: () => ({
     meta: [
       { title: "Enroll | Rare Skill Academy" },
@@ -23,7 +23,7 @@ export const Route = createFileRoute("/enroll")({
 
 function EnrollPage() {
   const search = Route.useSearch();
-  const [course, setCourse] = useState<CourseSlug>(search.course ?? courses[0].slug);
+  const [course, setCourse] = useState<CourseSlug>(search.course ?? "web-development");
   const [v, setV] = useState({ name: "", email: "", phone: "" });
   const [err, setErr] = useState<Partial<Record<"name" | "email" | "phone" | "subject" | "message" | "password", string>>>({});
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
