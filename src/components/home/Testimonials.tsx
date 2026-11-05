@@ -10,6 +10,7 @@ export function Testimonials() {
   const [i, setI] = useState(0);
   if (list.length === 0) return null;
   const t = list[i];
+  if (!t) return null;
   const go = (d: number) => setI((p) => (p + d + list.length) % list.length);
   const onKey = (e: KeyboardEvent) => {
     if (e.key === "ArrowLeft") go(-1);

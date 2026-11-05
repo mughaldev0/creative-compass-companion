@@ -49,6 +49,7 @@ export function Hero() {
 /** Built clay composition: two overlapping course cards with the logo swoosh behind. */
 function HeroComposition() {
   const [a, b] = courses;
+  if (!a || !b) return null;
   return (
     <div data-h="visual" className="relative mx-auto h-[340px] w-full max-w-[460px] sm:h-[400px]" aria-hidden>
       <svg viewBox="0 0 460 400" className="absolute inset-0 h-full w-full" fill="none">

@@ -4,6 +4,7 @@ import { ButtonLink } from "@/components/site/Button";
 export function SaleBanner() {
   if (!hasOffer()) return null;
   const c = courses[0];
+  if (!c) return null;
   const pct = discountPercent(c.price, c.discountPrice);
   const samePrice = courses.every((x) => x.price === c.price && x.discountPrice === c.discountPrice);
   return (
